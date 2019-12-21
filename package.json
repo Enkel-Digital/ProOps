@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --dest docs/",
+    "build-github": "vue-cli-service build --dest docs/",
+    "build-firebase": "vue-cli-service build --dest dist/",
+    "deploy-firebase": "firebase deploy --only hosting",
+    "deploy": "npm run build-firebase && npm run deploy-firebase",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
