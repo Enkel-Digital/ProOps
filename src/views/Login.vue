@@ -1,9 +1,118 @@
 <template>
-  <p>Login Page</p>
+  <div class="login">
+    <img alt="Login image" src="../assets/login.jpg" width="400" height="300" />
+
+    <h3>Glad to have you back :)</h3>
+
+    <input
+      v-autofocus
+      type="text"
+      v-model="email"
+      placeholder="Username"
+      @keypress.enter="login"
+      required
+    />
+    <br />
+    <input
+      type="password"
+      v-model="password"
+      placeholder="Password"
+      @keypress.enter="login"
+      required
+    />
+
+    <p class="error">{{ error_msg }}</p>
+    <button @click="login">Login</button>
+  </div>
 </template>
 
 <script>
-export default {};
+/**
+ * @Todo - Add in browser's "required" attribute checker for input.
+ */
+
+import firebase from "firebase";
+
+// Function to map and return a given err.code to a user friendly message
+function error_msg(err) {
+  switch (err.code) {
+    case "auth/wrong-password":
+      return "Invalid password or email.";
+    case "auth/network-request-failed":
+      return "Oops, check your internet connection!";
+    default:
+      return "Something went wrong! Please try again.";
+  }
+}
+
+export default {
+  name: "login",
+  data() {
+    return {
+      email: "",
+      password: "",
+      error_msg: ""
+    };
+  },
+  methods: {
+    login() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(usr => {
+          // Extract the userID out from the user's email address
+          const name = usr.user.email.split("@")[0];
+          console.log(name);
+          // Route to the user's home page, after login
+          this.$router.replace({ name: "home", params: { user: name } });
+        })
+        .catch(err => {
+          // @Debug Log the full error message from firebase for debug purposes only
+          console.log(err.message);
+          // Set the message into the error box to show user the error
+          this.error_msg = error_msg(err);
+        });
+    }
+  }
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+.login {
+  margin-top: 4em;
+}
+
+input {
+  margin: 1em 0;
+
+  width: 70%;
+  max-width: 20em;
+
+  padding: 1em;
+}
+
+button {
+  margin: 1em 0;
+
+  width: 70%;
+  height: 3em;
+
+  border-radius: 4em;
+
+  cursor: pointer;
+}
+
+.error {
+  margin-top: 1em;
+}
+
+.signup {
+  margin-top: 4em;
+  font-size: 1em;
+}
+
+.signup a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+</style>
