@@ -12,18 +12,12 @@
 
 <script>
 export default {
-  name: "home",
-  methods: {
-    async logout() {
-      alert("You have now been logged out");
-      this.$router.push("login");
-    }
-  }
+  name: "welcome"
 };
 </script>
 
 <style scoped>
-.home {
+.welcome {
   display: flex;
   flex-direction: column;
 }

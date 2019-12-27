@@ -14,7 +14,7 @@
     <button @click="logout">Logout</button>
 
     <footer>
-      <router-link to="/about">About</router-link>
+      <router-link to="/help">Help</router-link>
     </footer>
   </div>
 </template>
