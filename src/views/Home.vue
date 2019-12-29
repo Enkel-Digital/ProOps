@@ -20,12 +20,19 @@
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
   name: "home",
   methods: {
-    async logout() {
+    logout() {
       alert("You have now been logged out");
-      this.$router.push({ name: "welcome" });
+
+      // Signout current user and redirect to welcome page afterwards.
+      firebase
+        .auth()
+        .signOut()
+        .then(() => this.$router.push({ name: "welcome" }));
     }
   }
 };
