@@ -1,6 +1,10 @@
 // Import AuthType Enum
 import AuthType from "./AuthType";
 
+/** @notice Pre-Load all components for frequently used routes */
+import WelcomeComponent from "@/views/Welcome.vue";
+import LoginComponent from "@/views/Login.vue";
+
 /**
  * @notice These routes uses lazy loading for the components
  *
@@ -12,7 +16,13 @@ const routes = [
   {
     path: "/",
     name: "welcome",
-    component: () => import("@/views/Welcome.vue"),
+    component: WelcomeComponent,
+    meta: { Auth_requirements: AuthType.public_only }
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: LoginComponent,
     meta: { Auth_requirements: AuthType.public_only }
   },
   {
@@ -20,12 +30,6 @@ const routes = [
     name: "about",
     component: () => import("@/views/About.vue"),
     meta: { Auth_requirements: AuthType.public }
-  },
-  {
-    path: "/login",
-    name: "login",
-    component: () => import("@/views/Login.vue"),
-    meta: { Auth_requirements: AuthType.public_only }
   }
 ];
 

@@ -1,8 +1,14 @@
 // Import AuthType Enum
 import AuthType from "./AuthType";
 
+/** @notice Pre-Load all components for frequently used routes */
+import HomeComponent from "@/views/Home.vue";
+import IpadComponent from "@/views/Ipad.vue";
+import WalkieComponent from "@/views/Walkie.vue";
+import TeamComponent from "@/views/Team.vue";
+
 /**
- * @notice These routes uses lazy loading for the components
+ * @notice Some of these lesser used routes uses lazy loading for the components
  *
  * route level code-splitting
  * this generates a separate chunk (about.[hash].js) for this route
@@ -12,25 +18,25 @@ const routes = [
   {
     path: "/home",
     name: "home",
-    component: () => import("@/views/Home.vue"),
+    component: HomeComponent,
     meta: { Auth_requirements: AuthType.private }
   },
   {
     path: "/ipad",
     name: "ipad",
-    component: () => import("@/views/ipad.vue"),
+    component: IpadComponent,
     meta: { Auth_requirements: AuthType.private }
   },
   {
     path: "/walkie",
     name: "walkie",
-    component: () => import("@/views/Walkie.vue"),
+    component: WalkieComponent,
     meta: { Auth_requirements: AuthType.private }
   },
   {
     path: "/team",
     name: "team",
-    component: () => import("@/views/Team.vue"),
+    component: TeamComponent,
     meta: { Auth_requirements: AuthType.private }
   },
   {
