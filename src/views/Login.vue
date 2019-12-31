@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <BackBtn id="BackBtn" />
     <img alt="Login image" src="../assets/login.jpg" width="400" height="300" />
 
     <h3>Glad to have you back :)</h3>
@@ -32,6 +33,7 @@
  */
 
 import firebase from "firebase";
+import BackBtn from "@/components/BackBtn.vue";
 
 // Function to map and return a given err.code to a user friendly message
 function error_msg(err) {
@@ -47,6 +49,9 @@ function error_msg(err) {
 
 export default {
   name: "login",
+  components: {
+    BackBtn
+  },
   data() {
     return {
       email: "",
@@ -62,13 +67,13 @@ export default {
         .then(usr => {
           // Extract the userID out from the user's email address
           const name = usr.user.email.split("@")[0];
-          console.log(name);
+          // console.log(name);
           // Route to the user's home page, after login
           this.$router.replace({ name: "home", params: { user: name } });
         })
         .catch(err => {
           // @Debug Log the full error message from firebase for debug purposes only
-          console.log(err.message);
+          // console.log(err.message);
           // Set the message into the error box to show user the error
           this.error_msg = error_msg(err);
         });
@@ -96,6 +101,7 @@ button {
 
   width: 70%;
   height: 3em;
+  max-width: 20em;
 
   border-radius: 4em;
 
@@ -114,5 +120,9 @@ button {
 .signup a {
   text-decoration: underline;
   cursor: pointer;
+}
+
+#BackBtn {
+  position: absolute;
 }
 </style>
