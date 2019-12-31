@@ -1,8 +1,7 @@
 <template>
-  <div class="about">
+  <div>
     <BackBtn />
-    <h1>About page</h1>
-    <p>Learn more about this app here!</p>
+    <p>scaffold</p>
   </div>
 </template>
 

@@ -6,6 +6,7 @@ import HomeComponent from "@/views/Home.vue";
 import IpadComponent from "@/views/Ipad.vue";
 import WalkieComponent from "@/views/Walkie.vue";
 import TeamComponent from "@/views/Team.vue";
+import DeviceStatusComponent from "@/views/DeviceStatus.vue";
 
 /**
  * @notice Some of these lesser used routes uses lazy loading for the components
@@ -37,6 +38,12 @@ const routes = [
     path: "/team",
     name: "team",
     component: TeamComponent,
+    meta: { Auth_requirements: AuthType.private }
+  },
+  {
+    path: "/device-status",
+    name: "device-status",
+    component: DeviceStatusComponent,
     meta: { Auth_requirements: AuthType.private }
   },
   {
