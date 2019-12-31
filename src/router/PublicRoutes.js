@@ -30,6 +30,12 @@ const routes = [
     name: "about",
     component: () => import("@/views/About.vue"),
     meta: { Auth_requirements: AuthType.public }
+  },
+  {
+    path: "/help",
+    name: "help",
+    component: () => import("@/views/Help.vue"),
+    meta: { Auth_requirements: AuthType.public }
   }
 ];
 
