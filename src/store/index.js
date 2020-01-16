@@ -8,9 +8,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    username: "",
     ipads: {}
   },
   mutations: {
+    update_username: function(state, new_username) {
+      state.username = new_username;
+    },
     update_ipad_data: function(state, data) {
       state.ipads = data;
     },

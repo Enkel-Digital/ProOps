@@ -67,7 +67,8 @@ export default {
         .then(usr => {
           // Extract the userID out from the user's email address
           const name = usr.user.email.split("@")[0];
-          // console.log(name);
+          // Save the username to vuex
+          this.$store.commit("update_username", name);
           // Route to the user's home page, after login
           this.$router.replace({ name: "home", params: { user: name } });
         })
