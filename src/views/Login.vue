@@ -65,10 +65,9 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(usr => {
-          // Extract the userID out from the user's email address
-          const name = usr.user.email.split("@")[0];
-          // Save the username to vuex
-          this.$store.commit("update_username", name);
+          // Save user's email to vuex and update the user's name
+          this.$store.commit("update_email", usr.user.email);
+
           // Route to the user's home page, after login
           this.$router.replace({ name: "home", params: { user: name } });
         })

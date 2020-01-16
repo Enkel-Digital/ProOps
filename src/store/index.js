@@ -4,16 +4,24 @@ import Vuex from "vuex";
 // Mock server data
 import ipads from "./mock_data/ipad";
 
+// Import server communication modules
+import users from "./users";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    username: "",
+    email: "",
+    name: "",
     ipads: {}
   },
   mutations: {
-    update_username: function(state, new_username) {
-      state.username = new_username;
+    // Update email function, updates the user's name too
+    update_email: function(state, new_email) {
+      state.email = new_email;
+
+      // Get the user's name from server data.
+      state.name = users.getUsername(state.email);
     },
     update_ipad_data: function(state, data) {
       state.ipads = data;
