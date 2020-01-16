@@ -7,7 +7,6 @@
 
 <script>
 import ipad from "@/components/Ipad.vue";
-import ipads from "@/store/ipad.js";
 import BackBtn from "@/components/BackBtn.vue";
 
 export default {
@@ -16,8 +15,14 @@ export default {
     BackBtn
   },
   data: function() {
+    // Tmp placed here
+    // Checks if the data has been loaded from server, if not, load it.
+    if (!Object.keys(this.$store.state.ipads).length)
+      this.$store.dispatch("load_ipad_data");
+
+    // Pass in ipad data from vuex store
     return {
-      ipads
+      ipads: this.$store.state.ipads
     };
   }
 };
