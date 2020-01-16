@@ -20,8 +20,12 @@ export default {
   props: ["walkie"],
   methods:{
       clicked(id){ alert(`You clicked walkie: ${id}`);
-         this.$router.push({ name: "home" }) }
+          this.$store.commit("toggle_walkie_status", id);
+      // Route user back to the home page. 
+         this.$router.push({ name: "home" }) 
+      }
   }
+
 };
 
 
