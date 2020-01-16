@@ -1,8 +1,15 @@
 <template>
-  <div>
-    <button>Button representing a Walkie</button>
-    <p>{{ id }}</p>
-    <p v-if="available">Available</p>
+    <div id="walkie-component">
+      <img
+      alt="Walkie ICON"
+      src="../assets/walkie.png"
+      width="84"
+      height="84"
+      @click="clicked(walkie.id)"
+      />
+    
+    <p>{{ walkie.id }}</p>
+    <p v-if="walkie.available">Available</p>
     <p v-else>In Use</p>
   </div>
 </template>
@@ -10,13 +17,22 @@
 <script>
 export default {
   name: "walkie",
-  data: function() {
-    return {
-      available: false,
-      id: 1
-    };
+  props: ["walkie"],
+  methods:{
+      clicked(id){ alert(`You clicked walkie: ${id}`);
+         this.$router.push({ name: "home" }) }
   }
 };
+
+
 </script>
 
-<style scoped></style>
+<style scoped>
+#walkie-component {
+  border-width: 1em;
+  border-color: black;
+  border: 1px solid black;
+}
+
+
+</style>

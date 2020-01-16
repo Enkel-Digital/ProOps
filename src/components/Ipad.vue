@@ -20,7 +20,7 @@ export default {
   props: ["ipad"],
   methods: {
     clicked(id) {
-      alert(`U clicked ipad: ${id}`);
+      alert(`You clicked ipad: ${id}`);
       this.$router.push({ name: "home" });
       // this.$props.ipad.available = !this.$props.ipad.available;
     }
