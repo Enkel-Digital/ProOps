@@ -29,13 +29,29 @@ export default new Vuex.Store({
       state.ipads = data;
     },
     toggle_ipad_status: function(state, id) {
-      state.ipads[id].available = !state.ipads[id].available;
+      const ipad = state.ipads[id];
+
+      // Toggle availability of the ipad
+      ipad.available = !ipad.available;
+
+      // When the ipad status is set to "In use/Not Available" save the user's email
+      // Else set to empty string
+      if (!ipad.available) ipad.user = state.email;
+      else delete ipad.user;
     },
     update_walkie_data: function(state, data) {
       state.walkies = data;
     },
     toggle_walkie_status: function(state, id) {
-      state.walkies[id].available = !state.walkies[id].available;
+      const walkie = state.walkies[id];
+
+      // Toggle availability of the ipad
+      walkie.available = !walkie.available;
+
+      // When the walkie status is set to "In use/Not Available" save the user's email
+      // Else set to empty string
+      if (!walkie.available) walkie.user = state.email;
+      else delete walkie.user;
     }
   },
   actions: {
