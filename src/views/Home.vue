@@ -9,7 +9,6 @@
       ipad
     </router-link>
     <router-link class="button" to="/team">Team Shift</router-link>
-    <router-link class="button" to="/device-status">Check In/Out Devices</router-link>
     <router-link class="button" to="/faulty">Faulty devices</router-link>
     <button @click="logout">Logout</button>
 
