@@ -15,7 +15,8 @@ export default new Vuex.Store({
     email: "",
     name: "",
     ipads: {},
-    walkies: {}
+    walkies: {},
+    problems: []
   },
   mutations: {
     // Update email function, updates the user's name too
@@ -52,6 +53,10 @@ export default new Vuex.Store({
       // Else set to empty string
       if (!walkie.available) walkie.user = state.email;
       else delete walkie.user;
+    },
+    new_problem: function(state, new_problem_object) {
+      new_problem_object.id = Math.random();
+      state.problems.push(new_problem_object);
     }
   },
   actions: {
