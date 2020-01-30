@@ -20,8 +20,21 @@ export default {
   props: ["walkie"],
   methods: {
     clicked(id) {
+      const selected_walkie = this.$store.state.walkies[id];
+
+      // If the device is checked out
+      if (!selected_walkie.available) {
+        // we want to ensure only the same user can check back in the device
+        if (selected_walkie.user !== this.$store.state.email) {
+          alert(`You did not checkout walkie "${id}" thus cannot check it in.`);
+          // Ends the function since current user is not allowed to check in device
+          return;
+        }
+      }
+
       alert(`You clicked walkie: ${id}`);
       this.$store.commit("toggle_walkie_status", id);
+
       // Route user back to the home page.
       this.$router.push({ name: "home" });
     }
