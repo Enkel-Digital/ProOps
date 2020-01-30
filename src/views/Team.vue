@@ -8,7 +8,19 @@
         <th>Walkie</th>
         <th>Ipad</th>
       </tr>
-      <tr v-for="user in users" v-bind:key="user.email">
+      <tr v-for="user in users_with_2_device" v-bind:key="user.email">
+        <td>{{ user.name }}</td>
+        <td>{{ user.team }}</td>
+        <td>{{ getUserWalkie(user.email) }}</td>
+        <td>{{ getUserIpad(user.email) }}</td>
+      </tr>
+      <tr v-for="user in users_with_1_device" v-bind:key="user.email">
+        <td>{{ user.name }}</td>
+        <td>{{ user.team }}</td>
+        <td>{{ getUserWalkie(user.email) }}</td>
+        <td>{{ getUserIpad(user.email) }}</td>
+      </tr>
+      <tr v-for="user in users_all_nil" v-bind:key="user.email">
         <td>{{ user.name }}</td>
         <td>{{ user.team }}</td>
         <td>{{ getUserWalkie(user.email) }}</td>
@@ -31,7 +43,10 @@ export default {
   /* Update data to be real time binded so it updates as someone else changes it. */
   data: function() {
     return {
-      users
+      users,
+      users_with_2_device: {},
+      users_with_1_device: {},
+      users_all_nil: {}
     };
   },
   methods: {
@@ -56,6 +71,30 @@ export default {
       }
 
       return "Nil";
+    }
+  },
+  created: function arrange() {
+    console.log("Created hook");
+
+    const users = this.users;
+    for (const key in users) {
+      const user = users[key];
+
+      let num_of_device_checkedout = 0;
+      if (this.getUserIpad(user.email) !== "Nil") ++num_of_device_checkedout;
+      if (this.getUserWalkie(user.email) !== "Nil") ++num_of_device_checkedout;
+
+      if (num_of_device_checkedout === 2)
+        this.users_with_2_device[user.email] = user;
+      else if (num_of_device_checkedout === 1)
+        this.users_with_1_device[user.email] = user;
+      else if (num_of_device_checkedout === 0)
+        this.users_all_nil[user.email] = user;
+      else
+        console.log(
+          "Internal Error, num_of_device_checkedout is invalid: ",
+          num_of_device_checkedout
+        );
     }
   }
 };
