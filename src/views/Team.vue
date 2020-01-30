@@ -74,8 +74,6 @@ export default {
     }
   },
   created: function arrange() {
-    console.log("Created hook");
-
     const users = this.users;
     for (const key in users) {
       const user = users[key];
@@ -90,11 +88,13 @@ export default {
         this.users_with_1_device[user.email] = user;
       else if (num_of_device_checkedout === 0)
         this.users_all_nil[user.email] = user;
-      else
+      else {
+        // eslint-disable-next-line no-console
         console.log(
           "Internal Error, num_of_device_checkedout is invalid: ",
           num_of_device_checkedout
         );
+      }
     }
   }
 };
