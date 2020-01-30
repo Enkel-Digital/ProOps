@@ -13,8 +13,8 @@
         <td>{{ problem.device }}</td>
         <td>{{ problem.device_id }}</td>
         <td>{{ problem.description }}</td>
-        <!-- <td>{{ getUserWalkie(user.email) }}</td> -->
-        <!-- <td>{{ getUserIpad(user.email) }}</td> -->
+        <td>{{ problem.name }}</td>
+        <td>{{ problem.email }}</td>
       </tr>
     </table>
   </div>
@@ -32,24 +32,6 @@ export default {
     return {
       problems: this.$store.state.problems
     };
-  },
-  methods: {
-    // getUserIpad(user_email) {
-    //   const { ipads } = this.$store.state;
-    //   for (const key in ipads) {
-    //     const ipad = ipads[key];
-    //     if (ipad.user === user_email) return ipad.id;
-    //   }
-    //   return "Nil";
-    // },
-    // getUserWalkie(user_email) {
-    //   const { walkies } = this.$store.state;
-    //   for (const key in walkies) {
-    //     const walkie = walkies[key];
-    //     if (walkie.user === user_email) return walkie.id;
-    //   }
-    //   return "Nil";
-    // }
   }
 };
 </script>

@@ -40,10 +40,16 @@ export default {
   },
   methods: {
     reportDevice() {
+      const current_user = {
+        email: this.$store.state.email,
+        name: this.$store.state.name
+      };
+
       // Save user's email to vuex and update the user's name
       this.$store.commit("new_problem", {
         device_id: this.id,
         description: this.description,
+        ...current_user,
         device: "ipad"
       });
     }
