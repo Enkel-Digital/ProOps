@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BackBtn />
+    <NavigationBar />
 
     <input
       v-autofocus
@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import BackBtn from "@/components/BackBtn.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 export default {
   components: {
-    BackBtn
+    NavigationBar
   },
   data() {
     return {

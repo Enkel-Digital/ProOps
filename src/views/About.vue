@@ -1,20 +1,19 @@
 <template>
   <div class="about">
-    <BackBtn />
+    <NavigationBar />
     <h1>About page</h1>
     <p>Learn more about this app here!</p>
   </div>
 </template>
 
 <script>
-import BackBtn from "@/components/BackBtn.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 export default {
   components: {
-    BackBtn
+    NavigationBar
   }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

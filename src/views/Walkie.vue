@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BackBtn />
+    <NavigationBar />
     <walkie
       v-for="walkie in walkies"
       v-bind:key="walkie.id"
@@ -11,12 +11,12 @@
 
 <script>
 import walkie from "@/components/Walkie.vue";
-import BackBtn from "@/components/BackBtn.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 export default {
   components: {
     walkie,
-    BackBtn
+    NavigationBar
   },
 
   data: function() {

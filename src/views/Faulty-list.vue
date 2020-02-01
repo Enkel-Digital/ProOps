@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BackBtn />
+    <NavigationBar />
     <table>
       <tr>
         <th>Device</th>
@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import BackBtn from "@/components/BackBtn.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 export default {
   components: {
-    BackBtn
+    NavigationBar
   },
   /* Update data to be real time binded so it updates as someone else changes it. */
   data: function() {

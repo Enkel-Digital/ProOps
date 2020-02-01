@@ -1,18 +1,18 @@
 <template>
   <div>
-    <BackBtn />
+    <NavigationBar />
     <ipad v-for="ipad in ipads" v-bind:key="ipad.id" v-bind:ipad="ipad" />
   </div>
 </template>
 
 <script>
 import ipad from "@/components/Ipad.vue";
-import BackBtn from "@/components/BackBtn.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 export default {
   components: {
     ipad,
-    BackBtn
+    NavigationBar
   },
   data: function() {
     // Tmp placed here

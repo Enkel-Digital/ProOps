@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <BackBtn id="BackBtn" />
+    <NavigationBar id="NavigationBar" />
     <img alt="Login image" src="../assets/login.jpg" width="400" height="300" />
 
     <h3>Glad to have you back :)</h3>
@@ -33,7 +33,7 @@
  */
 
 import firebase from "firebase";
-import BackBtn from "@/components/BackBtn.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 // Function to map and return a given err.code to a user friendly message
 function error_msg(err) {
@@ -50,7 +50,7 @@ function error_msg(err) {
 export default {
   name: "login",
   components: {
-    BackBtn
+    NavigationBar
   },
   data() {
     return {
@@ -122,7 +122,7 @@ button {
   cursor: pointer;
 }
 
-#BackBtn {
+#NavigationBar {
   position: absolute;
 }
 </style>

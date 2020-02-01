@@ -1,16 +1,16 @@
 <template>
   <div>
-    <BackBtn />
+    <NavigationBar />
     <p>scaffold</p>
   </div>
 </template>
 
 <script>
-import BackBtn from "@/components/BackBtn.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 export default {
   components: {
-    BackBtn
+    NavigationBar
   }
 };
 </script>

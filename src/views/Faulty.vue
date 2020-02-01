@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BackBtn />
+    <NavigationBar />
     <br />
     <hr />
     <p>Report faulty device</p>
@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import BackBtn from "@/components/BackBtn.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 export default {
   components: {
-    BackBtn
+    NavigationBar
   }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BackBtn />
+    <NavigationBar />
     <table>
       <tr>
         <th>Name</th>
@@ -31,14 +31,14 @@
 </template>
 
 <script>
-import BackBtn from "@/components/BackBtn.vue";
+import NavigationBar from "@/components/NavigationBar.vue";
 
 // Tmp direct import of the users mock data to build the UI first.
 import users from "../store/mock_data/users";
 
 export default {
   components: {
-    BackBtn
+    NavigationBar
   },
   /* Update data to be real time binded so it updates as someone else changes it. */
   data: function() {
