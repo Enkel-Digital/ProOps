@@ -52,10 +52,12 @@ export default {
         ...current_user,
         device: "ipad"
       });
+
+      // Route user to all fauly device page
+      this.$router.push({ name: "faulty-list" });
     }
   }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
