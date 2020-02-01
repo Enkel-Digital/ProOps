@@ -1,11 +1,18 @@
 <template>
   <div class="home">
     <router-link class="button" to="/walkie">
-      <img alt="Walkie ICON" src="../assets/walkie.png" width="84" height="84" />
+      <img
+        alt="Walkie ICON"
+        src="../assets/walkie.png"
+        width="84"
+        height="84"
+      />
+      <br />
       Walkie Talkie
     </router-link>
     <router-link class="button" to="/ipad">
       <img alt="Ipad ICON" src="../assets/ipad.png" width="84" height="84" />
+      <br />
       Ipad
     </router-link>
     <router-link class="button" to="/team">Team Shift List</router-link>
@@ -37,8 +44,20 @@ export default {
 .home {
   display: flex;
   flex-direction: column;
-  background-color: lightgrey;
   text-align: center;
-  font-size: 40px;
+}
+
+button,
+.button,
+a:visited {
+  background-color: lightgrey;
+
+  max-width: 10em;
+  margin-bottom: 1em;
+
+  font-size: 3em;
+
+  text-decoration: none;
+  color: black;
 }
 </style>
