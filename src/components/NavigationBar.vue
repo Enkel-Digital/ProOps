@@ -21,6 +21,14 @@ export default {
 
 <style scoped>
 .nav {
+  position: fixed;
+  z-index: 100;
+
+  left: 0vw;
+  bottom: 0vh;
+  min-width: 100vw;
+  height: 2em;
+
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-areas: "back-btn home-btn";
@@ -29,8 +37,9 @@ export default {
 
 button {
   color: blue;
-  border: 0em;
 
-  margin: 1em;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 4em;
 }
 </style>

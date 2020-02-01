@@ -102,12 +102,14 @@ export default {
 
 <style scoped>
 table {
-  font-size: 3em;
-  border: 1px solid black;
+  width: 96vw;
+
+  font-size: 1em;
+  border: 1px solid grey;
 }
 
 td,
 th {
-  border: 1px solid black;
+  border: 1px solid grey;
 }
 </style>

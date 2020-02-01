@@ -8,7 +8,7 @@ exports.notifyDTM = functions.https.onRequest(async (req, res) => {
   const data = JSON.parse(req.body);
 
   let html =
-    "<h3>Hello DTMs</h3><br />There is a new faulty device reported by a staff memember!<hr />";
+    "<h3>Hello DTMs</h3><br />There is a new faulty device reported by a staff!<hr />";
 
   // Add all data to the HTML mail body with newlines
   for (let [key, value] of Object.entries(data))

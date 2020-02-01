@@ -16,6 +16,7 @@ async function notifyDTM(url, data) {
 
     return true;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error("Failed to notify DTM of faulty device.");
     return false;
   }
