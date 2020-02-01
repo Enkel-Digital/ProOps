@@ -8,6 +8,9 @@ import walkies from "./mock_data/walkie";
 // Import server communication modules
 import users from "./users";
 
+// Import serverless function call
+import notifyDTM from "./notifyDTM";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -54,9 +57,24 @@ export default new Vuex.Store({
       if (!walkie.available) walkie.user = state.email;
       else delete walkie.user;
     },
-    new_problem: function(state, new_problem_object) {
-      new_problem_object.id = Math.random();
+    new_problem: async function(state, new_problem_object) {
+      // Get the time where problem is reported at
+      const date = new Date();
+      const timestamp = date.getTime();
+
+      // Use timestamp as a unique problem ID for v-bind:key in Faulty-list
+      new_problem_object.id = timestamp;
+      new_problem_object.timestamp = timestamp;
+      new_problem_object.time = date.toString();
+
       state.problems.push(new_problem_object);
+
+      // Remove problem id before emailing DTM as its not needed
+      delete new_problem_object.id;
+      await notifyDTM(
+        "https://us-central1-proops-mobile.cloudfunctions.net/notifyDTM",
+        new_problem_object
+      );
     }
   },
   actions: {
