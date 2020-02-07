@@ -14,7 +14,7 @@ export default {
     id: 1
   },
   2: {
-    available: false,
+    available: true,
     id: 2
   },
   3: {
@@ -22,11 +22,11 @@ export default {
     id: 3
   },
   4: {
-    available: false,
+    available: true,
     id: 4
   },
   5: {
-    available: false,
+    available: true,
     id: 5
   }
 };
