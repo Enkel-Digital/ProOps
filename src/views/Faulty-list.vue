@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="max-width: 100vw;">
     <NavigationBar />
     <table>
       <tr>
@@ -38,7 +38,7 @@ export default {
 
 <style scoped>
 table {
-  font-size: 4em;
+  font-size: 1em;
   border: 1px solid black;
 }
 

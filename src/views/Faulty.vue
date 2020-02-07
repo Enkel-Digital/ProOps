@@ -2,9 +2,7 @@
   <div>
     <NavigationBar />
     <br />
-    <hr />
     <p>Report faulty device</p>
-    <!-- <router-link to="/faulty/add/walkie">test</router-link> -->
     <br />
     <router-link class="button" to="/faulty/add/walkie">Walkie</router-link>
     <br />
@@ -12,8 +10,9 @@
     <router-link class="button" to="/faulty/add/ipad">Ipad</router-link>
     <br />
     <br />
-    <hr />
-    <router-link class="button" to="/faulty/list">List all faulty devices</router-link>
+    <router-link class="button" to="/faulty/list"
+      >List all faulty devices</router-link
+    >
   </div>
 </template>
 
@@ -33,16 +32,22 @@ export default {
   color: black;
   font-family: "Times New Roman", Times, serif;
   font-size: 2em;
-  border-style: double;
-  background-color: antiquewhite;
+  border-style: solid;
+  border-radius: 4em;
+
+  text-align: center;
+  text-decoration: none;
+  background-color: white;
+
+  padding: 0.1em 1em;
+
+  min-width: 100em;
 }
 
 p {
   font-size: 3em;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   border-style: solid;
   border-radius: 0.5em;
-  background-color: rgb(250, 216, 216);
 }
 </style>

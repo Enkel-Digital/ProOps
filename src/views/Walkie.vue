@@ -6,6 +6,8 @@
       v-bind:key="walkie.id"
       v-bind:walkie="walkie"
     />
+    <br />
+    <br />
   </div>
 </template>
 

@@ -2,6 +2,8 @@
   <div>
     <NavigationBar />
     <ipad v-for="ipad in ipads" v-bind:key="ipad.id" v-bind:ipad="ipad" />
+    <br />
+    <br />
   </div>
 </template>
 

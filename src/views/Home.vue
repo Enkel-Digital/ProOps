@@ -10,31 +10,38 @@
       <br />
       Walkie Talkie
       <br />
-        <br />
+      <br />
     </router-link>
     <router-link class="button" to="/ipad">
       <img alt="Ipad ICON" src="../assets/ipad.png" width="84" height="84" />
       <br />
       Ipad
-        <br />
-          <br />
+      <br />
+      <br />
     </router-link>
     <router-link class="button" to="/team">
-    <img 
-    alt= "Team Shift ICON"
-    src="../assets/teamshift.jpg" width= "84" height= "84" />
-<br/> 
-Team Shift List
-  <br />
-    <br />
+      <img
+        alt="Team Shift ICON"
+        src="../assets/teamshift.jpg"
+        width="84"
+        height="84"
+      />
+      <br />
+      Team Shift List
+      <br />
+      <br />
     </router-link>
     <router-link class="button" to="/faulty">
-    <img alt= "Faulty Icon" 
-    src="../assets/faulty.jpg" width="84" height= "84" />
-    <br/>
-    Faulty Devices
+      <img
+        alt="Faulty Icon"
+        src="../assets/faulty.jpg"
+        width="84"
+        height="84"
+      />
+      <br />
+      Faulty Devices
     </router-link>
-    <button @click="logout">Logout</button>
+    <button class="button" @click="logout">Logout</button>
   </div>
 </template>
 
@@ -61,30 +68,21 @@ export default {
 .home {
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-align: center;
-  background-color: rgb(236, 133, 133)
-  
 }
 
-.button {
+.button,
+a:visited {
   border-style: solid;
   border-radius: 1em;
   border-width: 0.2em;
-  background-color: rgb(153, 35, 35);
+  background-color: white;
   margin-bottom: 1.5em;
   text-align: center;
   text-decoration: none;
-  
-}
-
-button,
-a:visited {
-  background-color: white;
-  max-width: 5em;
-  margin-bottom: 1em;
-  font-size: 3em;
-  text-decoration: none;
   color: black;
 
+  min-width: 8em;
 }
 </style>

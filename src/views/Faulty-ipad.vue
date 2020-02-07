@@ -11,12 +11,16 @@
       required
     />
     <br />
-    <input
+    <br />
+    <textarea
       type="text"
       v-model="description"
       placeholder="Write your problem here"
       @keypress.enter="reportDevice"
       required
+      rows="10"
+      cols="40"
+      style="resize: none;"
     />
 
     <p class="error">{{ error_msg }}</p>
