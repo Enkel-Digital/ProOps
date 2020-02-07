@@ -19,7 +19,8 @@ export default new Vuex.Store({
     name: "",
     ipads: {},
     walkies: {},
-    problems: []
+    problems: [],
+    history: []
   },
   mutations: {
     // Update email function, updates the user's name too
@@ -42,6 +43,20 @@ export default new Vuex.Store({
       // Else set to empty string
       if (!ipad.available) ipad.user = state.email;
       else delete ipad.user;
+
+      const date = new Date();
+      const snapshot = {
+        name: state.name,
+        email: state.email,
+        device: "ipad",
+        id,
+        status: ipad.available ? "in" : "out",
+        timestamp: date.getTime(),
+        time: date.toString(),
+        historyId: date.getTime() + id
+      };
+
+      state.history.unshift(snapshot);
     },
     update_walkie_data: function(state, data) {
       state.walkies = data;
@@ -56,6 +71,20 @@ export default new Vuex.Store({
       // Else set to empty string
       if (!walkie.available) walkie.user = state.email;
       else delete walkie.user;
+
+      const date = new Date();
+      const snapshot = {
+        name: state.name,
+        email: state.email,
+        device: "walkie",
+        id,
+        status: walkie.available ? "in" : "out",
+        timestamp: date.getTime(),
+        time: date.toString(),
+        historyId: date.getTime() + id
+      };
+
+      state.history.unshift(snapshot);
     },
     new_problem: async function(state, new_problem_object) {
       // Get the time where problem is reported at

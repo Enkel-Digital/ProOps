@@ -62,6 +62,12 @@ const routes = [
     name: "faulty-list",
     component: () => import("@/views/Faulty-list.vue"),
     meta: { Auth_requirements: AuthType.private }
+  },
+  {
+    path: "/history",
+    name: "history",
+    component: () => import("@/views/History.vue"),
+    meta: { Auth_requirements: AuthType.private }
   }
 ];
 

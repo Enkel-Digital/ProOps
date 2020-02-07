@@ -1,6 +1,7 @@
 <template>
   <div>
     <NavigationBar />
+    <router-link class="button" to="/history">HISTORY</router-link>
     <table>
       <tr>
         <th>Name</th>
