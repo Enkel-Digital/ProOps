@@ -103,14 +103,25 @@ export default {
 
 <style scoped>
 table {
-  width: 96vw;
+  width: 97vw;
 
   font-size: 1em;
-  border: 1px solid grey;
+  border: 0.5px solid grey;
+  font-family:cursive;
 }
 
 td,
 th {
-  border: 1px solid grey;
+  border: 0.5px solid grey;
+
 }
+.button
+{
+text-decoration:none;
+  color: blue;
+  font-family: 'Times New Roman', Times, serif;
+
+
+}
+   
 </style>

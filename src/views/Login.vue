@@ -94,6 +94,7 @@ input {
   max-width: 20em;
 
   padding: 1em;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {

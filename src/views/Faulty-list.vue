@@ -39,11 +39,13 @@ export default {
 <style scoped>
 table {
   font-size: 1em;
-  border: 1px solid black;
+  border: 0.3px solid black;
+border-radius: 0.3em;
 }
 
 td,
 th {
   border: 1px solid black;
+  font-family:cursive;
 }
 </style>
