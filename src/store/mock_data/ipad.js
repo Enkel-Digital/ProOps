@@ -28,5 +28,13 @@ export default {
   5: {
     available: true,
     id: 5
+  },
+  6: {
+    available: true,
+    id: 6
+  },
+  7: {
+    available: true,
+    id: 7
   }
 };
