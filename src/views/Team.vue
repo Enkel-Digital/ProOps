@@ -107,7 +107,7 @@ table {
 
   font-size: 1em;
   border: 0.5px solid grey;
-  font-family:cursive;
+    font-family:'Times New Roman', Times, serif;
 }
 
 td,

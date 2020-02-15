@@ -46,6 +46,6 @@ border-radius: 0.3em;
 td,
 th {
   border: 1px solid black;
-  font-family:cursive;
+  font-family: 'Times New Roman', Times, serif;
 }
 </style>
