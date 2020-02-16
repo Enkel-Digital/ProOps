@@ -1,6 +1,5 @@
 <template>
   <div class="login">
-    <NavigationBar id="NavigationBar" />
     <img alt="Login image" src="../assets/login.jpg" width="400" height="300" />
 
     <h3>Glad to have you back :)</h3>
@@ -24,6 +23,7 @@
 
     <p class="error">{{ error_msg }}</p>
     <button @click="login">Login</button>
+    <button id="back-btn" @click="back">Back</button>
   </div>
 </template>
 
@@ -33,7 +33,6 @@
  */
 
 import firebase from "firebase";
-import NavigationBar from "@/components/NavigationBar.vue";
 
 // Function to map and return a given err.code to a user friendly message
 function error_msg(err) {
@@ -49,9 +48,6 @@ function error_msg(err) {
 
 export default {
   name: "login",
-  components: {
-    NavigationBar
-  },
   data() {
     return {
       email: "",
@@ -60,6 +56,9 @@ export default {
     };
   },
   methods: {
+    back() {
+      this.$router.push({ name: "welcome" });
+    },
     login() {
       firebase
         .auth()
@@ -83,8 +82,8 @@ export default {
 </script>
 
 <style scoped>
-.login {
-  margin-top: 4em;
+img {
+  background-size: cover;
 }
 
 input {
@@ -98,31 +97,24 @@ input {
 }
 
 button {
-  margin: 1em 0;
+  margin: 1em 0 0 0;
 
   width: 70%;
   height: 3em;
   max-width: 20em;
 
+  border-style: solid;
+  border-width: thin;
   border-radius: 4em;
-
-  cursor: pointer;
 }
 
 .error {
   margin-top: 1em;
 }
 
-.signup {
-  margin-top: 4em;
-}
-
-.signup a {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-#NavigationBar {
-  position: absolute;
+#back-btn {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 4em;
 }
 </style>
