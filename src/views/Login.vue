@@ -94,7 +94,7 @@ input {
   max-width: 20em;
 
   padding: 1em;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {
@@ -115,7 +115,6 @@ button {
 
 .signup {
   margin-top: 4em;
-  font-size: 1em;
 }
 
 .signup a {

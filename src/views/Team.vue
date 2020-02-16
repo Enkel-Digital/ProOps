@@ -104,24 +104,17 @@ export default {
 <style scoped>
 table {
   width: 97vw;
-
-  font-size: 1em;
   border: 0.5px solid grey;
-    font-family:'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 td,
 th {
   border: 0.5px solid grey;
-
 }
-.button
-{
-text-decoration:none;
+.button {
+  text-decoration: none;
   color: blue;
-  font-family: 'Times New Roman', Times, serif;
-
-
+  font-family: "Times New Roman", Times, serif;
 }
-   
 </style>

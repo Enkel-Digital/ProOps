@@ -42,8 +42,6 @@ export default {
 <style scoped>
 table {
   width: 96vw;
-
-  font-size: 1em;
   border: 1px solid grey;
 }
 

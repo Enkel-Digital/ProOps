@@ -16,7 +16,7 @@ export default {
 .welcome {
   display: flex;
   flex-direction: column;
-  font-family:'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
   align-items: center;
 
