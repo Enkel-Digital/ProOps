@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import createPersistedState from "vuex-persistedstate";
 
 // Mock server data
 import ipads from "./mock_data/ipad";
@@ -114,5 +115,5 @@ export default new Vuex.Store({
       commit("update_walkie_data", walkies);
     }
   },
-  modules: {}
+  plugins: [createPersistedState()]
 });
