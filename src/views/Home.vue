@@ -4,8 +4,8 @@
       <img
         alt="Walkie ICON"
         src="../assets/walkie.png"
-        width="84"
-        height="84"
+        width="120"
+        height="120"
       />
       <br />
       Walkie Talkie
@@ -13,7 +13,7 @@
       <br />
     </router-link>
     <router-link class="button" to="/ipad">
-      <img alt="Ipad ICON" src="../assets/ipad.png" width="84" height="84" />
+      <img alt="Ipad ICON" src="../assets/ipad.png" width="120" height="120" />
       <br />
       Ipad
       <br />
@@ -24,7 +24,7 @@
         alt="Team Shift ICON"
         src="../assets/teamshift.jpg"
         width="84"
-        height="84"
+        height="100"
       />
       <br />
       Team Shift List
@@ -35,13 +35,25 @@
       <img
         alt="Faulty Icon"
         src="../assets/faulty.jpg"
-        width="84"
+        width="110"
         height="84"
       />
       <br />
       Faulty Devices
     </router-link>
-    <button class="button" @click="logout">Logout</button>
+    <router-link class="button" to="/profile">
+      <img
+        alt="Faulty Icon"
+        src="../assets/faulty.jpg"
+        width="110"
+        height="84"
+      />
+      <br />
+      Profile
+    </router-link>
+    <button class="button" @click="logout">
+      Logout
+    </button>
   </div>
 </template>
 
@@ -66,10 +78,13 @@ export default {
 
 <style scoped>
 .home {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
+  margin-top: 8vh;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  /* grid-template-areas: "back-btn home-btn"; */
+  grid-gap: 1em;
 }
 
 .button,
@@ -83,6 +98,8 @@ a:visited {
   text-decoration: none;
   color: black;
 
-  min-width: 8em;
+  min-height: 10em;
+  max-height: 10em;
+  min-width: 10em;
 }
 </style>
