@@ -27,9 +27,12 @@ export default new Vuex.Store({
     // Update email function, updates the user's name too
     update_email: function(state, new_email) {
       state.email = new_email;
+    },
+    update_name: function(state, new_name) {
+      // Defaults to name associated with the email from server data
+      new_name = new_name || users.getUsername(state.email);
 
-      // Get the user's name from server data.
-      state.name = users.getUsername(state.email);
+      state.name = new_name;
     },
     update_ipad_data: function(state, data) {
       state.ipads = data;

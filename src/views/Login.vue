@@ -23,6 +23,7 @@
 
     <p class="error">{{ error_msg }}</p>
     <button @click="login">Login</button>
+    <br />
     <button id="back-btn" @click="back">Back</button>
   </div>
 </template>
@@ -66,6 +67,7 @@ export default {
         .then(usr => {
           // Save user's email to vuex and update the user's name
           this.$store.commit("update_email", usr.user.email);
+          this.$store.commit("update_name");
 
           // Route to the user's home page, after login
           this.$router.replace({ name: "home", params: { user: name } });
